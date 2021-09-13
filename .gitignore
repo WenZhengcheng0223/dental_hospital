@@ -3,9 +3,9 @@
 
 target/
 out/
-!.mvn/wrapper/maven-wrapper.jar
-!**/src/main/**/target/
-!**/src/test/**/target/
+.mvn/
+**/src/main/**/target/
+**/src/test/**/target/
 
 
 # Log file
