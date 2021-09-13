@@ -1,4 +1,4 @@
-package com.zmn.reservationplatformcore;
+package com.zmn;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

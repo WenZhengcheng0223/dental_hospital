@@ -1,4 +1,4 @@
-package com.zmn.reservationplatformcore;
+package com.zmn;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -13,10 +13,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @Version : 1.0.0
  */
 @SpringBootApplication
-public class ReservationPlatformCoreApplication {
+public class ZmnApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(ReservationPlatformCoreApplication.class, args);
+        SpringApplication.run(ZmnApplication.class, args);
     }
 
 }
