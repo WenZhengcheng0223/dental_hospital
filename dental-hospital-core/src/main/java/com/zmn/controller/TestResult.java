@@ -1,7 +1,7 @@
 package com.zmn.controller;
 
 import com.zmn.utils.R;
-import com.zmn.utils.ResultCodeEnum;
+import com.zmn.utils.enums.ResultCodeEnum;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -21,12 +21,12 @@ public class TestResult {
     @GetMapping("/test")
     public R test(){
 
-        return R.error().code(ResultCodeEnum.NOT_FOUND.getCode()).message(ResultCodeEnum.NOT_FOUND.getMessage());
+        return R.error().status(ResultCodeEnum.NOT_FOUND.getStatus()).message(ResultCodeEnum.NOT_FOUND.getMessage());
     }
 
     @GetMapping("/test1")
     public R test1(){
 
-        return R.error().code(ResultCodeEnum.NOT_FOUND.getCode()).message(ResultCodeEnum.NOT_FOUND.getMessage());
+        return R.error().status(ResultCodeEnum.NOT_FOUND.getStatus()).message(ResultCodeEnum.NOT_FOUND.getMessage());
     }
 }
