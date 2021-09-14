@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.zmn</groupId>
-    <artifactId>reservation-platform-core</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <name>reservation-platform-core</name>
-    <description>reservation-platform-core</description>
+    <artifactId>dental-hospital-core</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <name>dental-hospital-core</name>
+    <description>dental-hospital-core</description>
     <properties>
         <java.version>1.8</java.version>
     </properties>
