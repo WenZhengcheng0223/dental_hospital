@@ -13,7 +13,7 @@ out/
 
 # Log file
 *.log
-
+logger
 # BlueJ files
 *.ctxt
 
