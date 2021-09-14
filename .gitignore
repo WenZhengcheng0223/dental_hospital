@@ -3,10 +3,13 @@
 
 target/
 out/
-.mvn/
+**/.mvn
+**/mvnw
+**/mvnw.cmd
 **/src/main/**/target/
 **/src/test/**/target/
 
+**/.gitignore
 
 # Log file
 *.log
