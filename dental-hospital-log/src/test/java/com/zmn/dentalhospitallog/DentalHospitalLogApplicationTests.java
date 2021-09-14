@@ -1,0 +1,13 @@
+package com.zmn.dentalhospitallog;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+class DentalHospitalLogApplicationTests {
+
+    @Test
+    void contextLoads() {
+    }
+
+}
