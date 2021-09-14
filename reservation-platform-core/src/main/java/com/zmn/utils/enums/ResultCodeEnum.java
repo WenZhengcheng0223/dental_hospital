@@ -1,8 +1,6 @@
-package com.zmn.utils;
+package com.zmn.utils.enums;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
-import org.springframework.http.HttpStatus;
 
 /**
  * @Description :
@@ -15,7 +13,7 @@ import org.springframework.http.HttpStatus;
  * @Version : 1.0.0
  */
 @Getter
-@AllArgsConstructor
+
 public enum ResultCodeEnum {
 
     /**
@@ -23,11 +21,16 @@ public enum ResultCodeEnum {
      */
     SUCCESS(true, 200, "成功"),
     FAIL(false, 400, "失败"),
-    NOT_FOUND(false, 404, "请求接口不存在"),
+    NOT_FOUND(false, 404, "请求资源不存在"),
     INTERNAL_SERVER_ERROR(false, 500, "服务器内部错误");
 
     private final Boolean success;
-    private final Integer code;
+    private final Integer status;
     private final String message;
 
+    ResultCodeEnum(Boolean success, Integer status, String message) {
+        this.success = success;
+        this.status = status;
+        this.message = message;
+    }
 }

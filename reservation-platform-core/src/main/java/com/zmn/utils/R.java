@@ -1,5 +1,6 @@
 package com.zmn.utils;
 
+import com.zmn.utils.enums.ResultCodeEnum;
 import lombok.Data;
 
 import java.util.HashMap;
@@ -20,7 +21,7 @@ public class R {
 
     private static  R r;
     private Boolean success;
-    private Integer code;
+    private Integer status;
     private String message;
     private Map<String, Object> data = new HashMap<>();
     private R(){};
@@ -39,7 +40,7 @@ public class R {
     public static R ok(){
         getInstance();
         r.setSuccess(ResultCodeEnum.SUCCESS.getSuccess());
-        r.setCode(ResultCodeEnum.SUCCESS.getCode());
+        r.setStatus(ResultCodeEnum.SUCCESS.getStatus());
         r.setMessage(ResultCodeEnum.SUCCESS.getMessage());
         return r;
     }
@@ -47,7 +48,7 @@ public class R {
     public static R error(){
         getInstance();
         r.setSuccess(ResultCodeEnum.FAIL.getSuccess());
-        r.setCode(ResultCodeEnum.FAIL.getCode());
+        r.setStatus(ResultCodeEnum.FAIL.getStatus());
         r.setMessage(ResultCodeEnum.FAIL.getMessage());
         return r;
     }
@@ -62,8 +63,8 @@ public class R {
         return this;
     }
 
-    public R code(Integer code){
-        this.code = code;
+    public R status(Integer status){
+        this.status = status;
         return this;
     }
 
@@ -75,6 +76,9 @@ public class R {
     public R data(Map<String, Object> map){
         this.setData(map);
         return this;
+    }
+    public R notFound(){
+        return this.status(ResultCodeEnum.NOT_FOUND.getStatus()).message(ResultCodeEnum.NOT_FOUND.getMessage());
     }
 
 }
