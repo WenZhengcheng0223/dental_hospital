@@ -25,11 +25,10 @@ public class SwaggerConfig {
     @Bean
     public Docket createRestApi() {
         return new Docket(DocumentationType.SWAGGER_2)
-                .groupName("后端接口")
                 .apiInfo(apiInfo())
-                .pathMapping("/api")
+                .pathMapping("/")
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.zmn.controller"))
+                .apis(RequestHandlerSelectors.basePackage("com.zmn"))
                 .paths(PathSelectors.any())
                 .build();
     }
