@@ -26,10 +26,10 @@ public class BaseEntity {
 
     @TableField(value = "creat_time",fill = FieldFill.INSERT)
     @ApiModelProperty(value="创建时间")
-    public LocalDateTime creatTime;
+    private LocalDateTime creatTime;
 
 
     @TableField(value = "update_time",fill = FieldFill.UPDATE)
     @ApiModelProperty(value="更新时间")
-    public LocalDateTime updateTime;
+    private LocalDateTime updateTime;
 }
