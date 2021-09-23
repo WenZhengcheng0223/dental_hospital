@@ -1,0 +1,85 @@
+package com.zmn.controller;
+
+import com.zmn.entity.Account;
+import com.zmn.service.AccountService;
+import com.zmn.utils.R;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import org.apache.commons.lang3.ArrayUtils;
+import org.apache.ibatis.reflection.ArrayUtil;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.time.LocalDateTime;
+import java.util.List;
+
+/**
+ * @Description :
+ * @Author : WenZhengcheng
+ * @Date : Create in 2021/9/23 上午 09:49
+ * @Email : wenzhengcheng0223@163.com
+ * @Since : JDK 1.8
+ * @PackageName : com.zmn.controller
+ * @ProjectName : DentalHospital
+ * @Version : 1.0.0
+ */
+@RestController
+@Api(tags = "账号管理")
+@RequestMapping("/api/account")
+public class AccountController {
+    private final AccountService service;
+
+
+    public AccountController(AccountService service) {
+        this.service = service;
+    }
+
+    @GetMapping("/select")
+    public R selectAll(){
+        Account account = new Account();
+        account.setOpenid("89778879");
+        service.save(account);
+        List<Account> list = service.list();
+        if (!list.isEmpty()) {
+            return R.ok().message("查询成功").data("list",list);
+        }
+
+        return R.error().message("查询失败");
+    }
+
+
+    @PostMapping("/save")
+    @ApiOperation(value = "test", notes = "test")
+    public R save(Account account){
+        boolean save = service.save(account);
+
+        if (save) {
+            return R.ok().message("添加成功");
+        }
+
+        return R.error().message("添加失败");
+    }
+
+    @PostMapping("/update")
+    @ApiOperation(value = "test", notes = "test")
+    public R update(Account account){
+
+
+        return R.error().message("添加失败");
+    }
+
+
+    @GetMapping("/delete/{id}")
+    @ApiOperation(value = "tetst", notes = "test")
+    public R delete(long id){
+        boolean remove = service.removeById(id);
+        if (remove) {
+            return R.ok().message("删除成功");
+        }
+
+        return R.error().message("删除失败");
+    }
+
+
+
+}
