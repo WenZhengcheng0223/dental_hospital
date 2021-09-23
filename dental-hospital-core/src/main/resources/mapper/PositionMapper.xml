@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zmn.mapper.PositionMapper">
+  <resultMap id="BaseResultMap" type="com.zmn.entity.Position">
+    <!--@mbg.generated-->
+    <!--@Table `position`-->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="creat_time" jdbcType="TIMESTAMP" property="creatTime" />
+    <result column="level" jdbcType="VARCHAR" property="level" />
+    <result column="department_name" jdbcType="VARCHAR" property="departmentName" />
+    <result column="department_code" jdbcType="VARCHAR" property="departmentCode" />
+    <result column="doctor_name" jdbcType="VARCHAR" property="doctorName" />
+    <result column="doctor_code" jdbcType="VARCHAR" property="doctorCode" />
+    <result column="positon_name" jdbcType="VARCHAR" property="positonName" />
+    <result column="position_id" jdbcType="VARCHAR" property="positionId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, update_time, creat_time, `level`, department_name, department_code, doctor_name, 
+    doctor_code, positon_name, position_id
+  </sql>
+</mapper>

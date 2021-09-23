@@ -3,7 +3,7 @@ server:
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3306/mryy?serverTimezone=Asia/Shanghai
+    url: jdbc:mysql://127.0.0.1:3306/zml_dental_hospital?serverTimezone=Asia/Shanghai
     username: root
     password: 123456
   devtools:
@@ -11,3 +11,14 @@ spring:
       enabled: true
   freemarker:
     cache: false
+
+  redis:
+    host: 192.168.42.128
+    port: 6379
+
+
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+    auto-mapping-behavior: full
+  mapper-locations: classpath*:mapper/*Mapper.xml

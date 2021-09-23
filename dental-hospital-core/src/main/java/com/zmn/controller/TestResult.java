@@ -1,9 +1,15 @@
 package com.zmn.controller;
 
+import com.zmn.entity.Account;
+import com.zmn.service.AccountService;
 import com.zmn.utils.R;
-import com.zmn.utils.enums.ResultCodeEnum;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @Description :
@@ -16,17 +22,30 @@ import org.springframework.web.bind.annotation.RestController;
  * @Version : 1.0.0
  */
 @RestController
+@RequestMapping("/api")
+@Api(tags = "测试")
 public class TestResult {
 
-    @GetMapping("/test")
-    public R test(){
+    @Autowired
+    private AccountService accountService;
 
-        return R.error().status(ResultCodeEnum.NOT_FOUND.getStatus()).message(ResultCodeEnum.NOT_FOUND.getMessage());
+    @GetMapping("/user/login")
+    public R test() {
+        Map<String, Object> map = new HashMap<>();
+        map.put("name", "name");
+        map.put("avatar", "avatar");
+        return R.ok().data("info", map);
     }
 
-    @GetMapping("/test1")
-    public R test1(){
+    @ApiOperation(value = "filter测试接口", notes = "filter测试接口")
+    @PostMapping("/wx/login")
+    public R wxLogin() {
+        Account account = new Account();
+        account.setOpenid("88888");
+        account.setId(29);
+        accountService.updateById(account);
+//        accountService.save(account);
+        return R.ok();
 
-        return R.error().status(ResultCodeEnum.NOT_FOUND.getStatus()).message(ResultCodeEnum.NOT_FOUND.getMessage());
     }
 }

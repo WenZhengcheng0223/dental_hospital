@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zmn.mapper.BookMapper">
+  <resultMap id="BaseResultMap" type="com.zmn.entity.Book">
+    <!--@mbg.generated-->
+    <!--@Table book-->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="creat_time" jdbcType="TIMESTAMP" property="creatTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="note" jdbcType="VARCHAR" property="note" />
+    <result column="status" jdbcType="VARCHAR" property="status" />
+    <result column="doctor_name" jdbcType="VARCHAR" property="doctorName" />
+    <result column="doctor_code" jdbcType="VARCHAR" property="doctorCode" />
+    <result column="telephone" jdbcType="VARCHAR" property="telephone" />
+    <result column="project_name" jdbcType="VARCHAR" property="projectName" />
+    <result column="project_code" jdbcType="VARCHAR" property="projectCode" />
+    <result column="book_name" jdbcType="VARCHAR" property="bookName" />
+    <result column="book_id" jdbcType="VARCHAR" property="bookId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, creat_time, update_time, note, `status`, doctor_name, doctor_code, telephone, 
+    project_name, project_code, book_name, book_id
+  </sql>
+</mapper>

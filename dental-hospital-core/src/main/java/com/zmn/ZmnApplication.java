@@ -2,6 +2,8 @@ package com.zmn;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.web.servlet.ServletComponentScan;
+
 /**
  * @Description : 程序入口
  * @Author : WenZhengcheng
@@ -13,6 +15,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @Version : 1.0.0
  */
 @SpringBootApplication
+@ServletComponentScan
 public class ZmnApplication {
 
     public static void main(String[] args) {

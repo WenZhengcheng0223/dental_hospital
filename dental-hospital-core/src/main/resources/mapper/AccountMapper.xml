@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zmn.mapper.AccountMapper">
+  <resultMap id="BaseResultMap" type="com.zmn.entity.Account">
+    <!--@mbg.generated-->
+    <!--@Table account-->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="creat_time" jdbcType="TIMESTAMP" property="creatTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="note" jdbcType="VARCHAR" property="note" />
+    <result column="card" jdbcType="VARCHAR" property="card" />
+    <result column="age" jdbcType="VARCHAR" property="age" />
+    <result column="sex" jdbcType="VARCHAR" property="sex" />
+    <result column="role_code" jdbcType="VARCHAR" property="roleCode" />
+    <result column="openid" jdbcType="VARCHAR" property="openid" />
+    <result column="account_id" jdbcType="VARCHAR" property="accountId" />
+    <result column="telephone" jdbcType="VARCHAR" property="telephone" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, creat_time, update_time, note, card, age, sex, role_code, openid, account_id, 
+    telephone
+  </sql>
+</mapper>

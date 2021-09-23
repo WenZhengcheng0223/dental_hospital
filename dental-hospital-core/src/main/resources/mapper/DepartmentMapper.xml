@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zmn.mapper.DepartmentMapper">
+  <resultMap id="BaseResultMap" type="com.zmn.entity.Department">
+    <!--@mbg.generated-->
+    <!--@Table department-->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="creat_time" jdbcType="TIMESTAMP" property="creatTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="department_code" jdbcType="VARCHAR" property="departmentCode" />
+    <result column="department_name" jdbcType="VARCHAR" property="departmentName" />
+    <result column="department_id" jdbcType="VARCHAR" property="departmentId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, creat_time, update_time, department_code, department_name, department_id
+  </sql>
+</mapper>

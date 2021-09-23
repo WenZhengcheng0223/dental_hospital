@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zmn.mapper.ProjectMapper">
+  <resultMap id="BaseResultMap" type="com.zmn.entity.Project">
+    <!--@mbg.generated-->
+    <!--@Table project-->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="creat_time" jdbcType="TIMESTAMP" property="creatTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="end_time" jdbcType="TIMESTAMP" property="endTime" />
+    <result column="start_time" jdbcType="TIMESTAMP" property="startTime" />
+    <result column="project_result" jdbcType="VARCHAR" property="projectResult" />
+    <result column="patient_name" jdbcType="VARCHAR" property="patientName" />
+    <result column="patient_code" jdbcType="VARCHAR" property="patientCode" />
+    <result column="doctor_name" jdbcType="VARCHAR" property="doctorName" />
+    <result column="doctor_code" jdbcType="VARCHAR" property="doctorCode" />
+    <result column="time" jdbcType="VARCHAR" property="time" />
+    <result column="project_code" jdbcType="VARCHAR" property="projectCode" />
+    <result column="project_name" jdbcType="VARCHAR" property="projectName" />
+    <result column="project_id" jdbcType="VARCHAR" property="projectId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, creat_time, update_time, end_time, start_time, project_result, patient_name, 
+    patient_code, doctor_name, doctor_code, `time`, project_code, project_name, project_id
+  </sql>
+</mapper>
