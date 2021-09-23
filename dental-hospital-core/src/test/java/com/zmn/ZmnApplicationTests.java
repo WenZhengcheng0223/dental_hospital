@@ -8,13 +8,10 @@ import org.springframework.data.redis.core.StringRedisTemplate;
 
 @SpringBootTest
 class ZmnApplicationTests {
-    @Autowired
-    private AccountService accountService;
-    @Autowired
-    private StringRedisTemplate redisTemplate;
+
     @Test
     void contextLoads() {
-       redisTemplate.opsForValue().set("test","test");
+
     }
 
 }

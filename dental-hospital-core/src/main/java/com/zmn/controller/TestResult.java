@@ -22,7 +22,7 @@ import java.util.Map;
  * @Version : 1.0.0
  */
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/test")
 @Api(tags = "测试")
 public class TestResult {
 

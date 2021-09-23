@@ -15,7 +15,7 @@ import org.springframework.boot.web.servlet.ServletComponentScan;
  * @Version : 1.0.0
  */
 @SpringBootApplication
-@ServletComponentScan
+@ServletComponentScan("com.zmn")
 public class ZmnApplication {
 
     public static void main(String[] args) {
