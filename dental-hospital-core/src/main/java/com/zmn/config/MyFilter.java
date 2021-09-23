@@ -1,6 +1,7 @@
 package com.zmn.config;
 
 import com.zmn.utils.JwtUtil;
+import com.zmn.utils.R;
 import lombok.extern.slf4j.Slf4j;
 
 import javax.servlet.*;
@@ -61,6 +62,9 @@ public class MyFilter implements Filter {
         }
         log.info("=========退出我的filter============");
 //        throw new InvalidClassException("权限不足！");
+
+//        为了测试接口 没有携带token直接放行，测试完毕后请注释掉
+        filterChain.doFilter(servletRequest,servletResponse);
     }
 
     @Override
