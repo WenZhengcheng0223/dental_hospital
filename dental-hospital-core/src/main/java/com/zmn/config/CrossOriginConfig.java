@@ -32,7 +32,7 @@ public class CrossOriginConfig {
     @Bean
     public CorsFilter corsFilter(){
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-        source.registerCorsConfiguration("/**",builConfig());
+        source.registerCorsConfiguration("api/**",builConfig());
         return new CorsFilter(source);
     }
 

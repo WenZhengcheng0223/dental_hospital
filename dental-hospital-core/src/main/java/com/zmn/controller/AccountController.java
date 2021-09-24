@@ -23,8 +23,9 @@ import java.util.List;
  * @ProjectName : DentalHospital
  * @Version : 1.0.0
  */
-@RestController
+
 @Api(tags = "账号管理")
+@RestController
 @RequestMapping("/api/account")
 public class AccountController {
     private final AccountService service;
@@ -36,9 +37,6 @@ public class AccountController {
 
     @GetMapping("/select")
     public R selectAll(){
-        Account account = new Account();
-        account.setOpenid("89778879");
-        service.save(account);
         List<Account> list = service.list();
         if (!list.isEmpty()) {
             return R.ok().message("查询成功").data("list",list);
@@ -49,8 +47,8 @@ public class AccountController {
 
 
     @PostMapping("/save")
-    @ApiOperation(value = "test", notes = "test")
-    public R save(Account account){
+    @ApiOperation(value = "save", notes = "save")
+    public R save(@RequestBody Account account){
         boolean save = service.save(account);
 
         if (save) {
@@ -61,17 +59,20 @@ public class AccountController {
     }
 
     @PostMapping("/update")
-    @ApiOperation(value = "test", notes = "test")
-    public R update(Account account){
-
-
-        return R.error().message("添加失败");
+    @ApiOperation(value = "update", notes = "update")
+    public R update(@RequestBody Account account){
+        System.out.println(account.getId());
+        boolean update = service.updateById(account);
+        if (update){
+            return R.ok().message("更新成功").data(null);
+        }
+        return R.error().message("更新失败").data(null);
     }
 
 
-    @GetMapping("/delete/{id}")
-    @ApiOperation(value = "tetst", notes = "test")
-    public R delete(long id){
+    @GetMapping("/delete")
+    @ApiOperation(value = "delete", notes = "delete")
+    public R delete(@RequestParam String id){
         boolean remove = service.removeById(id);
         if (remove) {
             return R.ok().message("删除成功");

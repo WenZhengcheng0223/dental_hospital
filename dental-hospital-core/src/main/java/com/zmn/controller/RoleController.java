@@ -1,30 +1,37 @@
 package com.zmn.controller;
 
-
-import com.zmn.entity.Book;
-import com.zmn.service.BookService;
+import com.zmn.entity.Role;
+import com.zmn.service.RoleService;
 import com.zmn.utils.R;
-import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+/**
+ * @Description :
+ * @Author : WenZhengcheng
+ * @Date : Create in 2021/9/24 上午 11:36
+ * @Email : wenzhengcheng0223@163.com
+ * @Since : JDK 1.8
+ * @PackageName : com.zmn.controller
+ * @ProjectName : DentalHospital
+ * @Version : 1.0.0
+ */
 
-@Api(tags = "预约管理接口")
 @RestController
-@RequestMapping("/api/book")
-public class BookController {
+@RequestMapping("/api/role")
+public class RoleController {
 
 
-    private final BookService service;
-    BookController(BookService service){
+    private final RoleService service;
+    RoleController(RoleService service){
         this.service = service;
     }
 
     @GetMapping("/select")
     public R selectAll(){
-        List<Book> list = service.list();
+        List<Role> list = service.list();
         if (!list.isEmpty()) {
             return R.ok().message("查询成功").data("list",list);
         }
@@ -35,8 +42,8 @@ public class BookController {
 
     @PostMapping("/save")
     @ApiOperation(value = "save", notes = "save")
-    public R save(@RequestBody Book book){
-        boolean save = service.save(book);
+    public R save(@RequestBody Role role){
+        boolean save = service.save(role);
 
         if (save) {
             return R.ok().message("添加成功");
@@ -47,9 +54,9 @@ public class BookController {
 
     @PostMapping("/update")
     @ApiOperation(value = "update", notes = "update")
-    public R update(@RequestBody Book book){
-        System.out.println(book.getId());
-        boolean update = service.updateById(book);
+    public R update(@RequestBody Role role){
+        System.out.println(role.getId());
+        boolean update = service.updateById(role);
         if (update){
             return R.ok().message("更新成功").data(null);
         }

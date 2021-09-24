@@ -21,6 +21,7 @@ public class RedisConfig {
             throws UnknownHostException {
         RedisTemplate<Object, Object> template = new RedisTemplate<>();
         template.setConnectionFactory(redisConnectionFactory);
+        template.afterPropertiesSet();
         return template;
     }
     //Key为String类型的模板类。

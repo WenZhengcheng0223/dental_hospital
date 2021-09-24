@@ -1,30 +1,37 @@
 package com.zmn.controller;
 
-
-import com.zmn.entity.Book;
-import com.zmn.service.BookService;
+import com.zmn.entity.Position;
+import com.zmn.service.PositionService;
 import com.zmn.utils.R;
-import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+/**
+ * @Description :
+ * @Author : WenZhengcheng
+ * @Date : Create in 2021/9/24 上午 11:33
+ * @Email : wenzhengcheng0223@163.com
+ * @Since : JDK 1.8
+ * @PackageName : com.zmn.controller
+ * @ProjectName : DentalHospital
+ * @Version : 1.0.0
+ */
 
-@Api(tags = "预约管理接口")
 @RestController
-@RequestMapping("/api/book")
-public class BookController {
+@RequestMapping("/api/position")
+public class PositionController {
 
 
-    private final BookService service;
-    BookController(BookService service){
+    private final PositionService service;
+    PositionController(PositionService service){
         this.service = service;
     }
 
     @GetMapping("/select")
     public R selectAll(){
-        List<Book> list = service.list();
+        List<Position> list = service.list();
         if (!list.isEmpty()) {
             return R.ok().message("查询成功").data("list",list);
         }
@@ -35,8 +42,8 @@ public class BookController {
 
     @PostMapping("/save")
     @ApiOperation(value = "save", notes = "save")
-    public R save(@RequestBody Book book){
-        boolean save = service.save(book);
+    public R save(@RequestBody Position position){
+        boolean save = service.save(position);
 
         if (save) {
             return R.ok().message("添加成功");
@@ -47,9 +54,9 @@ public class BookController {
 
     @PostMapping("/update")
     @ApiOperation(value = "update", notes = "update")
-    public R update(@RequestBody Book book){
-        System.out.println(book.getId());
-        boolean update = service.updateById(book);
+    public R update(@RequestBody Position position){
+        System.out.println(position.getId());
+        boolean update = service.updateById(position);
         if (update){
             return R.ok().message("更新成功").data(null);
         }
